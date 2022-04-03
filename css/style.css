@@ -1,0 +1,526 @@
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+.flexContainer {
+    display: flex;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+    font-family: "Rubik", sans-serif;
+}
+
+h1,
+h2,
+.phoneNumber {
+    font-family: "Yeseva One", cursive;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn {
+    background-color: rgb(253, 136, 36);
+    padding: 1rem 1.7rem;
+    border-radius: 5px 0 0 5px;
+    color: white;
+}
+
+img {
+    display: inline-block;
+}
+
+.mobileMenu {
+    display: none;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/* Main section */
+main {
+    background-image: url(../imgs/main.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    position: relative;
+}
+
+main::after {
+    background-color: black;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-image: linear-gradient(120deg, #eaee44, #33d0ff); */
+    opacity: 0.3;
+}
+
+main header,
+main section {
+    z-index: 2;
+    position: relative;
+}
+
+/* main section {
+    padding: 11rem 0rem;
+    width: 55%;
+    margin-left: 30rem;
+} */
+
+.mainFlexContainer {
+    padding: 11rem 0rem;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 8rem;
+}
+
+.mainFlexContainer ul {
+    color: white;
+}
+
+main section div {
+    max-width: 450px;
+}
+
+main section h1 {
+    font-size: 4rem;
+    letter-spacing: 4px;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+main section form {
+    font-size: 0.8rem;
+}
+
+main section form > * {
+    float: left;
+}
+
+.searchInput {
+    padding: 0.7rem 1.7rem;
+    width: 60%;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px 0 0 5px;
+    background: white
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+        no-repeat 8px center;
+}
+
+.locationBtn {
+    border-radius: 0 5px 5px 0;
+    padding: 0.73rem 1.7rem;
+}
+
+header nav {
+    float: right;
+    width: 60%;
+}
+
+header > nav > ul > li {
+    float: left;
+    width: 12%;
+    color: #fff;
+}
+
+header > nav > ul {
+    text-align: center;
+    padding-top: 1.5rem;
+    font-size: 1rem;
+}
+
+main section ul.clear {
+    width: 45%;
+    margin-top: 2.3rem;
+}
+
+main section ul.clear > * {
+    float: left;
+    width: 33.333%;
+}
+
+main section ul.clear li i {
+    color: rgb(253, 136, 36);
+}
+
+/* Discover section */
+
+.discover {
+    background-image: url(../imgs/discover.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.discover > section {
+    max-width: 39%;
+    margin-left: auto;
+    margin-right: 18rem;
+    padding: 8rem 0;
+}
+
+.discover > section > .btn {
+    position: relative;
+}
+
+.discover > section > .btn::after {
+    width: 2rem;
+    content: "→";
+    position: absolute;
+    right: -30px;
+    top: 0;
+    background-color: rgba(253, 136, 36, 0.7);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 5px 5px 0;
+    /* padding-right: 2rem; */
+}
+
+.discover span,
+.speciality span,
+.hours > span:first-of-type,
+.testimonials > span:first-of-type {
+    color: rgb(253, 136, 36);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.discover h2 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+}
+
+.discover p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 1.3rem;
+}
+
+.discover p + p {
+    margin-bottom: 2rem;
+}
+
+/* Speciality section */
+
+.speciality {
+    background-color: rgb(242, 246, 247);
+    text-align: center;
+    padding: 5rem 7rem;
+}
+
+.speciality section {
+    max-width: 900px;
+    margin: 3rem auto 0;
+}
+
+.speciality h2 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+}
+
+.speciality > ul {
+    justify-content: center;
+}
+
+.speciality > .flexContainer > li {
+    padding: 1rem 1.5rem;
+    border-bottom: 2px solid #d3d3d3;
+}
+
+.speciality > .flexContainer > li:hover,
+.speciality > .flexContainer > li:focus {
+    border-bottom: 2px solid rgb(253, 136, 36);
+    color: rgb(253, 136, 36);
+    cursor: pointer;
+}
+
+.speciality > section > ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.speciality > section > ul > li {
+    max-width: 200px;
+    max-height: 230px;
+}
+
+.speciality > section > ul > li > img {
+    width: 100%;
+}
+
+.iconContainer {
+    justify-content: center;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(253, 136, 36, 0.3);
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: all ease-in-out 150ms;
+}
+
+.activeDot,
+.speciality .dot:hover,
+.speciality .dot:focus {
+    transform: scale(1.6);
+    background-color: rgba(253, 136, 36, 1);
+}
+
+/* hours section */
+.hours {
+    text-align: center;
+    padding: 5rem;
+}
+
+.hours h2 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+}
+
+.hours > span {
+    display: block;
+}
+
+.hours .phoneIcon {
+    border-radius: 50%;
+    border: 1px solid rgb(253, 136, 36);
+    padding: 0.8rem;
+    font-size: 1.4rem;
+    color: rgb(253, 136, 36);
+    margin-bottom: 1.2rem;
+}
+
+.hours .phoneNumber {
+    color: rgb(253, 136, 36);
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+.hours .daysContainer {
+    max-width: 600px;
+    margin: 1rem auto 2rem;
+}
+
+.hours .times {
+    flex-direction: column;
+    flex-basis: 66%;
+    text-align: left;
+}
+
+.hours .times > span:first-of-type {
+    font-size: 0.9rem;
+    font-family: "Rubik", sans-serif;
+    margin-bottom: 0.6rem;
+}
+
+.hours .times > span + span {
+    font-family: "Yeseva One", cursive;
+    font-size: 1.2rem;
+}
+
+.hours .times + .times {
+    flex-basis: 34%;
+}
+
+.hours .imgContainer {
+    justify-content: space-between;
+}
+
+.leftArrow,
+.rightArrow {
+    color: rgb(253, 136, 36);
+    border: 1px solid rgb(253, 136, 36);
+    border-radius: 50%;
+    padding: 0.8rem 1rem;
+    font-size: 1.2rem;
+    align-self: center;
+}
+
+.leftArrow:hover,
+.leftArrow:focus,
+.rightArrow:hover,
+.rightArrow:focus {
+    background-color: rgb(253, 136, 36);
+    color: white;
+    cursor: pointer;
+}
+
+.hours img {
+    width: 75%;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: rgb(242, 246, 247);
+    padding: 5rem;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+}
+
+.testimonials img {
+    border-radius: 50%;
+    width: 125px;
+    height: 125px;
+}
+
+.testimonials h4 {
+    font-size: 1.8rem;
+    margin: 1rem 0 0.2rem;
+}
+
+.testimonials .job {
+    color: #d3d3d3;
+    font-size: 1rem;
+}
+
+.testimonials .starIcons {
+    color: rgb(253, 192, 47);
+    margin: 1.3rem 0;
+}
+
+.testimonials p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+/* Media Queries */
+@media all and (max-width: 980px) {
+    .discover > section {
+        max-width: 80%;
+        margin-left: 12rem;
+        margin-right: auto;
+        padding: 5rem 3rem;
+    }
+}
+
+@media all and (max-width: 900px) {
+    .mainFlexContainer {
+        padding-left: 1rem;
+        padding-right: 2rem;
+    }
+}
+
+@media all and (max-width: 850px) {
+    header > nav > ul > li {
+        display: none;
+    }
+
+    main {
+        position: relative;
+    }
+
+    .mobileMenu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        color: white;
+        right: 20px;
+        font-size: 1.4rem;
+        z-index: 1;
+    }
+
+    .mobileMenu:hover,
+    .mobileMenu:focus {
+        cursor: pointer;
+    }
+}
+
+@media all and (max-width: 750px) {
+    main section {
+        padding: 5rem 3rem;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .discover > section {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 5rem 3rem;
+    }
+
+    .speciality {
+        padding: 5rem 3rem;
+    }
+
+    .hours {
+        padding: 5rem 3rem;
+    }
+
+    .hours .times {
+        flex: 1;
+    }
+
+    .hours .times + .times {
+        flex: 1;
+    }
+
+    .hours .daysContainer {
+        margin-top: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .testimonials {
+        padding: 5rem 3rem;
+    }
+}
+
+@media all and (max-width: 501px) {
+    .mainFlexContainer {
+        padding: 7rem 1rem;
+    }
+}
