@@ -1,5 +1,5 @@
 /* Box Model Hack */
-* {
+*, *::after, *::before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -141,7 +141,7 @@ main section form > * {
 
 .locationBtn {
     border-radius: 0 5px 5px 0;
-    padding: 0.73rem 1.7rem;
+    padding: 0.77rem 1.7rem;
 }
 
 header nav {
